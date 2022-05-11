@@ -1,5 +1,12 @@
 from setuptools import setup
 
+def read(fname):
+    try:
+        with open(os.path.join(os.path.dirname(__file__), fname)) as fh:
+            return fh.read()
+    except IOError:
+        return ''
+
 requirements = read('requirements.txt').splitlines()
 
 setup(name='tst',
